@@ -8,15 +8,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.listtile.view.*
 
-/**
- * Created by brianvoong on 12/18/17.
- */
+
 
 class MainAdapter(val mainList: mainlist): RecyclerView.Adapter<CustomViewHolder>() {
 
-    val artistTitles = listOf("First title", "Second", "3rd", "MOOOOORE TITLE")
 
-    // numberOfItems
     override fun getItemCount(): Int {
         return mainList.artist.size
     }
@@ -29,7 +25,7 @@ class MainAdapter(val mainList: mainlist): RecyclerView.Adapter<CustomViewHolder
     }
 
     override fun onBindViewHolder(holder: CustomViewHolder, position: Int) {
-        //        val artistTitle = artistTitles.get(position)
+
         val artist = mainList.artist.get(position)
         holder?.view?.artistName?.text = artist.name
         holder?.view?.listeners?.text = "Number of listeners: "+artist.listeners
